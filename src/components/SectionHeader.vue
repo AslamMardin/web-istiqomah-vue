@@ -37,14 +37,15 @@ a:hover {
     }
 
     50% {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
+        color: #EBD9B4;
     }
 }
 
 i {
     color: #9DBC98;
     animation-name: upDownAnimation;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-timing-function: ease-in in;
     animation-iteration-count: infinite;
 }

@@ -186,6 +186,7 @@ i {
     height: 10px;
     background-color: #eee;
     margin-top: 10px;
+    border-radius: 1rem;
 }
 
 .progress-bar {
@@ -236,6 +237,13 @@ i {
 }
 
 @media (max-width: 768px) {
+
+
+
+    .progress-bar-container {
+        width: 14rem;
+
+    }
 
     #list {
         box-shadow: 2px -5px 40px rgba(0, 0, 0, .2);
