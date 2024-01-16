@@ -25,6 +25,7 @@ const progressBarWidth = ref('0%');
 
 const title = ref("")
 const arti = ref("")
+const keterangan = ref("")
 const selectedAudio = ref("http://ia802609.us.archive.org/13/items/quraninindonesia/008AlAnfaal.mp3");
 const setTotalDuration = () => {
     totalDuration.value = audioElement.value.duration;
@@ -71,6 +72,8 @@ const _play = (i, item) => {
     selectedAudio.value = item.audio
     title.value = item.nama;
     arti.value = item.arti
+    keterangan.value = item.keterangan
+
     isPlaying.value = false
 }
 // http://ia802609.us.archive.org/13/items/quraninindonesia/008AlAnfaal.mp3
@@ -82,7 +85,7 @@ onMounted(() => {
 
 <template>
     <audio ref="audioElement" :src="selectedAudio" @timeupdate="updateTime" @loadedmetadata="setTotalDuration"></audio>
-    <div class="row m-lg-5" v-show="title != ''">
+    <div class="row row-audio m-lg-5" v-show="title != ''">
         <div class="col-3">
             <button class="btn-play" @click="togglePlayPause"><i class="bi"
                     :class="isPlaying ? 'bi-pause-fill' : 'bi-play-fill'"></i></button>
@@ -90,11 +93,17 @@ onMounted(() => {
         <div class="col-9">
             <p></p>
             <p></p>
-            <h6><b style="color: #638889;">{{ title != "" ? title : "" }} </b> {{ arti != "" ? " (" + arti + ")" : ""
-            }}
+            <h6>
+                <b style="color: #638889;">{{ title != "" ? title : "" }} </b> {{ arti != "" ? " (" + arti + ")" : ""
+                }}
+
+                <a href="#" @click.prevent="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="bi bi-file-text"></i>
+                </a>
             </h6>
             <p style="text-secondary"><i class="bi bi-alarm"></i> {{ formatTime(currentTime) }} - {{
-                formatTime(totalDuration) }}</p>
+                formatTime(totalDuration) }}
+            </p>
             <div class="progress-bar-container">
                 <div class="progress-bar" :style="{ width: progressBarWidth }"></div>
             </div>
@@ -129,16 +138,43 @@ onMounted(() => {
             </ol>
         </div>
     </section>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Keterangan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: justify;" v-if="keterangan != ''" v-html="keterangan">
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </template>
 
 <style scoped>
+.row-audio {
+    background-color: #F8EDFF;
+    margin-bottom: 3rem;
+}
+
 .btn-play {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
     margin: 1rem;
     background-color: #9DBC98;
-    border: 1px solid #fff;
+    border: 0px solid #fff;
 }
 
 .btn-play i {
