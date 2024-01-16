@@ -2,6 +2,7 @@
 import Home from './components/Home.vue';
 import SectionHeader from './components/SectionHeader.vue'
 import ListMusik from './components/ListMusik.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
@@ -17,4 +18,6 @@ import ListMusik from './components/ListMusik.vue';
 
     </div>
   </div>
+
+  <Footer />
 </template>
