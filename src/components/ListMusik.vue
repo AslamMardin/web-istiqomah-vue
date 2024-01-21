@@ -267,9 +267,8 @@ i {
 }
 
 #list {
-    box-shadow: 2px -5px 40px rgba(0, 0, 0, .2);
+
     padding: 3rem 0;
-    border-radius: 2rem 2rem 0 0;
 }
 
 @media (max-width: 768px) {
