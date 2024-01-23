@@ -47,6 +47,6 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: #fff !important;
 }
 </style>

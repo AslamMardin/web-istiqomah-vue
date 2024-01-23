@@ -20,7 +20,7 @@ function getKisah() {
             let response = await http.get("kisahnabi");
             // Mengasumsikan file JSON berisi sebuah array, perbarui state
             this.kisah = response.data;
-            return response.data;
+            resolve(response.data)
         } catch (e) {
             reject(e);
         }

@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <div class="row">
+        <div v-if="isLoading" class="d-flex justify-content-between my-5 align-items-center">
+            <ClipLoader color="#638889" :style="{ 'margin': '0rem auto' }" />
+        </div>
+        <div v-else class="row">
             <div class="col-lg-8 offset-lg-2 col-sm-12">
                 <div class="card pb-5 w-100 my-3 shadow-lg" v-for="(item, i) in solawats">
                     <div class="card-body">
@@ -20,10 +23,12 @@
 
 <script setup>
 // import solawatData from '@/assets/solawat.json'
+import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 import { ref, onMounted } from 'vue';
 const solawats = ref([])
 const showTranslation = ref(false);
 const activeCard = ref(null);
+const isLoading = ref(true);
 
 const toggleTranslation = (index) => {
     showTranslation.value = !showTranslation.value;
@@ -38,12 +43,15 @@ const toggleTranslation = (index) => {
 };
 const getSolawat = async () => {
     try {
-        let response = await fetch('/src/assets/sholawat.json');
+        // let response = await fetch('/src/assets/sholawat.json');
+        let response = await fetch('https://web-istiqomah.web.app/sholawat.json');
         let data = await response.json();
         console.log(data)
         solawats.value = data
     } catch (error) {
         console.error('Error fetching solawat data:', error);
+    } finally {
+        isLoading.value = false
     }
 }
 
