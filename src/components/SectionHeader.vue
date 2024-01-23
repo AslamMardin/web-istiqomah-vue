@@ -1,5 +1,5 @@
 <script setup>
-import gambarUtama from '../../public/a.png';
+import gambarUtama from '../../public/Mendidik-Anak-700x439-removebg-preview.png';
 </script>
 <template>
     <section class="d-flex justifyd-flex justify-content-center vh-100">

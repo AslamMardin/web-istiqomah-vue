@@ -4,12 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>Ciptaan Oleh Aslam Mardin, S.Kom</h5>
-                    <p>Phone: 0858-2558-7404</p>
+                    <h5>Ciptaan Oleh Kelompok 5</h5>
+                    <!-- <p>Phone: 0858-2558-7404</p> -->
                 </div>
                 <div class="col-md-6">
-                    <h5>ikuti Sosial Mediaku</h5>
-                    <ul class="list-inline">
+                    <!-- <h5>ikuti Sosial Mediaku</h5> -->
+                    <!-- <ul class="list-inline">
                         <li class="list-inline-item">
                             <a href="https://www.facebook.com/profile.php?id=100011977630973"><i
                                     class="bi bi-facebook"></i></a>
@@ -20,7 +20,7 @@
                         <li class="list-inline-item">
                             <a href="https://www.instagram.com/aslammardin/"><i class="bi bi-instagram"></i></a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>
@@ -29,7 +29,8 @@
 
 <style scoped>
 footer {
-    background-color: #638889 !important;
+    background-color: #294B29 !important;
+
 }
 
 footer a {
